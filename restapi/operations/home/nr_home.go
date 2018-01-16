@@ -72,8 +72,11 @@ func (o *NrHome) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 
 	var Banners models.InlineResponse200Banners
 	db.Table("banners").Where(map[string]interface{}{"status":0}).Limit(5).Find(&Banners)
-
 	response.Banners = Banners
+
+	var Icons models.InlineResponse200Icons
+	db.Table("icons").Where(map[string]interface{}{"status":0}).Limit(5).Find(&Icons)
+	response.Icons = Icons
 
 	//status
 
