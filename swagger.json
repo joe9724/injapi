@@ -1,0 +1,3614 @@
+﻿{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "jinlinonline-activity(活动)",
+    "version" : "1.0.0",
+    "title" : "jinlinonline-activity",
+    "contact" : {
+      "email" : "64060764@qq.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/joe9724/jinlinonline/1.0.0",
+  "tags" : [ {
+    "name" : "Activity",
+    "description" : "活动"
+  }, {
+    "name" : "Praise",
+    "description" : "点赞"
+  }, {
+    "name" : "Spare",
+    "description" : "打赏"
+  }, {
+    "name" : "Category",
+    "description" : "分类"
+  }, {
+    "name" : "Icon",
+    "description" : "icon"
+  }, {
+    "name" : "Home",
+    "description" : "首页"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/home" : {
+      "get" : {
+        "tags" : [ "Home" ],
+        "summary" : "大首页接口",
+        "description" : "大首页接口",
+        "operationId" : "/home",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "posId",
+          "in" : "query",
+          "description" : "位置Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "isRecommend",
+          "in" : "query",
+          "description" : "是否正常调用还是推荐调用 0=正常 1=推荐,保留字段",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/banner/list" : {
+      "get" : {
+        "tags" : [ "Banner" ],
+        "summary" : "Banner列表",
+        "description" : "Banner列表",
+        "operationId" : "/banner/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "posId",
+          "in" : "query",
+          "description" : "位置Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "isRecommend",
+          "in" : "query",
+          "description" : "是否正常调用还是推荐调用 0=正常 1=推荐",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_1"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/banner/detail" : {
+      "get" : {
+        "tags" : [ "Banner" ],
+        "summary" : "Banner详情",
+        "description" : "Banner详情",
+        "operationId" : "/banner/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "bannerId",
+          "in" : "query",
+          "description" : "bannerId",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_1"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/icon/list" : {
+      "get" : {
+        "tags" : [ "Icon" ],
+        "summary" : "app中间图标列表",
+        "description" : "app中间图标列表",
+        "operationId" : "/icon/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "posId",
+          "in" : "query",
+          "description" : "位置Id(默认0)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "isRecommend",
+          "in" : "query",
+          "description" : "是否正常调用还是推荐调用 0=正常 1=推荐",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_2"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/register/sendSms" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "下发注册时的验证码",
+        "description" : "下发注册时的验证码",
+        "operationId" : "/member/register/sendSms",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "query",
+          "description" : "登录所用手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(加密串要用到,供服务端验证，简单防刷)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/findPass/sendSms" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "下发找回密码时的验证码",
+        "description" : "下发找回密码时的验证码",
+        "operationId" : "findPass/sendSms",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "query",
+          "description" : "登录所用手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(加密串要用到,供服务端验证，简单防刷)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/findPass/editPass" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "修改密码",
+        "description" : "修改密码",
+        "operationId" : "findPass/editPass",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "query",
+          "description" : "登录所用手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(加密串要用到,供服务端验证，简单防刷)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "newPass",
+          "in" : "query",
+          "description" : "新密码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "oldPass",
+          "in" : "query",
+          "description" : "老密码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "query",
+          "description" : "0=修改密码 1=找回密码",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "extraInfo1",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/login" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "登录接口",
+        "description" : "登录接口",
+        "operationId" : "login",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Membername",
+          "in" : "query",
+          "description" : "登录名",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "loginType",
+          "in" : "query",
+          "description" : "登录方式,0代表密码登陆,1代表快捷登录",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "password",
+          "in" : "query",
+          "description" : "登录密码,",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "smsCode",
+          "in" : "query",
+          "description" : "快捷登录时上传smsCode,password留空",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "登录成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_4"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/startUp" : {
+      "get" : {
+        "tags" : [ "startUp" ],
+        "summary" : "启动页接口",
+        "description" : "启动页接口",
+        "operationId" : "/startUp",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria",
+            "schema" : {
+              "$ref" : "#/definitions/InitModel"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/register" : {
+      "post" : {
+        "tags" : [ "Member" ],
+        "summary" : "注册接口",
+        "description" : "注册接口",
+        "operationId" : "register",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "formData",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "formData",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "formData",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Membername",
+          "in" : "formData",
+          "description" : "登录名",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "password",
+          "in" : "formData",
+          "description" : "密码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "validateCode",
+          "in" : "formData",
+          "description" : "短信验证码",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "formData",
+          "description" : "手机号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "birth-year",
+          "in" : "formData",
+          "description" : "出生年",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "birth-month",
+          "in" : "formData",
+          "description" : "出生月",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "birth-day",
+          "in" : "formData",
+          "description" : "出生日",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "avatar",
+          "in" : "formData",
+          "description" : "头像",
+          "required" : false,
+          "type" : "file"
+        }, {
+          "name" : "ts",
+          "in" : "formData",
+          "description" : "时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "val",
+          "in" : "formData",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "注册成功，返回登录信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_4"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/order/list" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "获取订单列表(含条件检索)",
+        "description" : "获取订单列表",
+        "operationId" : "order/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "payType",
+          "in" : "query",
+          "description" : "支付类型 0是支付宝 1是微信 2是银联 3是applay 4是其他",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "orderNo",
+          "in" : "query",
+          "description" : "订单编号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "startTime",
+          "in" : "query",
+          "description" : "统计开始时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTime",
+          "in" : "query",
+          "description" : "统计结束时间",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "买书人id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "albumName",
+          "in" : "query",
+          "description" : "检索时模糊查询使用",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "val",
+          "in" : "query",
+          "description" : "加密串",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ts",
+          "in" : "query",
+          "description" : "时间戳(参与加密)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取反馈列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_5"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/order/serialNuber" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "充值订单产生流水号",
+        "description" : "充值订单产生流水号",
+        "operationId" : "/order/serialNuber",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "充值订单产生流水号",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/body"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "上报错误返回",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_6"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/member/checkRecharge" : {
+      "get" : {
+        "tags" : [ "Member" ],
+        "summary" : "检查是否充值成功",
+        "description" : "检查是否充值成功",
+        "operationId" : "/member/checkRecharge",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serialNumber",
+          "in" : "query",
+          "description" : "充值流水号",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "返回充值信息",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/search" : {
+      "get" : {
+        "tags" : [ "Search" ],
+        "summary" : "搜索",
+        "description" : "搜索",
+        "operationId" : "/search",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "活动类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "活动关键词",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "query",
+          "description" : "title",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serviceType",
+          "in" : "query",
+          "description" : "服务状态(付费0，免费1,全部2)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "areaCode",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "categoryId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_7"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/join" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "参加活动",
+        "description" : "参加活动",
+        "operationId" : "/activity/join",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "活动详情",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "活动关键词",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "query",
+          "description" : "title",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serviceType",
+          "in" : "query",
+          "description" : "服务状态(付费0，免费1,全部2)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "参加活动返回",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/detail" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "活动详情",
+        "description" : "活动详情",
+        "operationId" : "/activity/detail",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "活动详情",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "活动关键词",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "query",
+          "description" : "title",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serviceType",
+          "in" : "query",
+          "description" : "服务状态(付费0，免费1,全部2)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_8"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "活动列表",
+        "description" : "活动列表",
+        "operationId" : "/activity/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "活动类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "活动关键词",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "query",
+          "description" : "title",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serviceType",
+          "in" : "query",
+          "description" : "服务状态(付费0，免费1,全部2)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "listType",
+          "in" : "query",
+          "description" : "列表类型 0=正常列表 1=热门活动 2=经典案例",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "categoryId",
+          "in" : "query",
+          "description" : "分类id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_7"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list/sponsor" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "活动赞助商列表",
+        "description" : "活动列表",
+        "operationId" : "/activity/list/sponsor",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "活动类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "活动关键词",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "query",
+          "description" : "title",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serviceType",
+          "in" : "query",
+          "description" : "服务状态(付费0，免费1,全部2)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "isClassic",
+          "in" : "query",
+          "description" : "是否经典案例",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "categoryId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动ID",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_9"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list/joined" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "我参加的活动列表",
+        "description" : "我参加的活动列表",
+        "operationId" : "/activity/list/joined",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "活动类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "活动关键词",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "query",
+          "description" : "title",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serviceType",
+          "in" : "query",
+          "description" : "服务状态(付费0，免费1,全部2)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_7"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/list/fav" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "我收藏的活动列表",
+        "description" : "我收藏的活动列表",
+        "operationId" : "/activity/list/fav",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "活动类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "活动关键词",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "query",
+          "description" : "title",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serviceType",
+          "in" : "query",
+          "description" : "服务状态(付费0，免费1,全部2)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_7"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/fav" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "我收藏的活动列表",
+        "description" : "我收藏的活动列表",
+        "operationId" : "/activity/fav",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "活动类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "活动关键词",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "query",
+          "description" : "title",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "serviceType",
+          "in" : "query",
+          "description" : "服务状态(付费0，免费1,全部2)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "action",
+          "in" : "query",
+          "description" : "收藏/取消收藏",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/sponsors/list" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "赞助商列表",
+        "description" : "赞助商列表",
+        "operationId" : "/activity/sponsors/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "type",
+          "in" : "query",
+          "description" : "行业类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "已赞助数量",
+          "required" : false,
+          "type" : "integer",
+          "minimum" : 0,
+          "format" : "int64"
+        }, {
+          "name" : "icon",
+          "in" : "query",
+          "description" : "icon",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_9"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/activity/field/list" : {
+      "get" : {
+        "tags" : [ "Activity" ],
+        "summary" : "活动场地",
+        "description" : "活动场地",
+        "operationId" : "/activity/field/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "costType",
+          "in" : "query",
+          "description" : "费用类型",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "capacity",
+          "in" : "query",
+          "description" : "容纳人数",
+          "required" : false,
+          "type" : "integer",
+          "minimum" : 0,
+          "format" : "int64"
+        }, {
+          "name" : "orderBy",
+          "in" : "query",
+          "description" : "排序字段 0=热门推荐 1=最多查看 2=最多发起",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "icon",
+          "in" : "query",
+          "description" : "icon",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Title",
+          "in" : "query",
+          "description" : "场地名",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "siteArea",
+          "in" : "query",
+          "description" : "场地面积",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "状态 0=正常 1锁定",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "获取列表",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_10"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/category/list" : {
+      "get" : {
+        "tags" : [ "Category" ],
+        "summary" : "获取分类列表",
+        "description" : "获取分类列表",
+        "operationId" : "/category/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "startTs",
+          "in" : "query",
+          "description" : "开始时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTs",
+          "in" : "query",
+          "description" : "结束时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "tags",
+          "in" : "query",
+          "description" : "分类",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "parentId",
+          "in" : "query",
+          "description" : "-1表示根目录 其他表示获取子类",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "查询成功",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_11"
+            }
+          }
+        }
+      }
+    },
+    "/category/sub/list" : {
+      "get" : {
+        "tags" : [ "Category" ],
+        "summary" : "获取子类列表",
+        "description" : "获取子类列表",
+        "operationId" : "/category/sub/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "startTs",
+          "in" : "query",
+          "description" : "开始时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "endTs",
+          "in" : "query",
+          "description" : "结束时间戳",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "tags",
+          "in" : "query",
+          "description" : "标签",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "categoryId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "查询成功",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_11"
+            }
+          }
+        }
+      }
+    },
+    "/praise/click" : {
+      "get" : {
+        "tags" : [ "Praise" ],
+        "summary" : "点赞",
+        "description" : "点赞",
+        "operationId" : "/praise/click",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "targetMemberId",
+          "in" : "query",
+          "description" : "被点赞会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/praise/list" : {
+      "get" : {
+        "tags" : [ "Praise" ],
+        "summary" : "点赞列表",
+        "description" : "点赞列表",
+        "operationId" : "/praise/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "查询成功",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_12"
+            }
+          }
+        }
+      }
+    },
+    "/spare/click" : {
+      "get" : {
+        "tags" : [ "Spare" ],
+        "summary" : "打赏",
+        "description" : "打赏",
+        "operationId" : "/spare/click",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "targetMemberId",
+          "in" : "query",
+          "description" : "被打赏会员id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "value",
+          "in" : "query",
+          "description" : "打赏金额",
+          "required" : false,
+          "type" : "number"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "详情",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_3"
+            }
+          },
+          "default" : {
+            "description" : "error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/spare/list" : {
+      "get" : {
+        "tags" : [ "Spare" ],
+        "summary" : "打赏列表",
+        "description" : "打赏列表",
+        "operationId" : "/spare/list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "version",
+          "in" : "query",
+          "description" : "版本号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "imei",
+          "in" : "query",
+          "description" : "唯一识别号",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client",
+          "in" : "query",
+          "description" : "客户端类型",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "memberId",
+          "in" : "query",
+          "description" : "用户id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "分页索引",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "分页尺寸",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "activityId",
+          "in" : "query",
+          "description" : "活动id",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "from",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "to",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "查询成功",
+            "schema" : {
+              "$ref" : "#/definitions/inline_response_200_13"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Spare" : {
+      "type" : "object",
+      "properties" : {
+        "from" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "to" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "topicId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "shuoshuoId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "value" : {
+          "type" : "number",
+          "description" : "打赏金额"
+        }
+      },
+      "description" : "打赏",
+      "example" : {
+        "topicId" : 5,
+        "from" : 0,
+        "to" : 6,
+        "time" : 1,
+        "shuoshuoId" : 5,
+        "value" : 2.3021358869347654518833223846741020679473876953125
+      }
+    },
+    "Activity" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "showicon" : {
+          "type" : "boolean"
+        },
+        "activityId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "serviceType" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "免费0 付费1 全部2"
+        },
+        "startTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "endTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "publishTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "checkedTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "priseCount" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "点赞数"
+        },
+        "pcUrl" : {
+          "type" : "string"
+        },
+        "wapUrl" : {
+          "type" : "string"
+        },
+        "extraUrl" : {
+          "type" : "string"
+        },
+        "QRcodeUrl" : {
+          "type" : "string",
+          "description" : "二维码生成地址"
+        },
+        "limitPeople" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "joinedPeople" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "参加人数即报名人数"
+        },
+        "lat" : {
+          "type" : "number"
+        },
+        "lon" : {
+          "type" : "number"
+        },
+        "area" : {
+          "type" : "string",
+          "description" : "活动地点"
+        },
+        "publishUserId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "publishType" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "是否由后台发起还是app用户发起"
+        },
+        "checkStatus" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "审核状态"
+        },
+        "money" : {
+          "type" : "number",
+          "description" : "获得赞助资金"
+        },
+        "followCount" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "关注人数"
+        },
+        "isFollow" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "是否关注(针对会员)"
+        },
+        "contactPeople" : {
+          "type" : "string"
+        },
+        "tags" : {
+          "type" : "string",
+          "description" : "美食|优惠|福利"
+        },
+        "contactAddr" : {
+          "type" : "string"
+        },
+        "contactPhone" : {
+          "type" : "string"
+        },
+        "viewCount" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "shareCount" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "extraInfo1" : {
+          "type" : "string",
+          "description" : "备用字段"
+        },
+        "extraInfo2" : {
+          "type" : "string",
+          "description" : "备用字段"
+        },
+        "extraInfo3" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "备用字段"
+        }
+      },
+      "description" : "活动",
+      "example" : {
+        "serviceType" : 1,
+        "followCount" : 7,
+        "icon" : "icon",
+        "extraInfo1" : "extraInfo1",
+        "lon" : 7.3862819483858839220147274318151175975799560546875,
+        "checkedTime" : 7,
+        "extraInfo2" : "extraInfo2",
+        "extraInfo3" : 9,
+        "cover" : "cover",
+        "activityId" : 0,
+        "shareCount" : 5,
+        "checkStatus" : 1,
+        "contactPeople" : "contactPeople",
+        "contactAddr" : "contactAddr",
+        "extraUrl" : "extraUrl",
+        "limitPeople" : 3,
+        "startTime" : 5,
+        "viewCount" : 4,
+        "lat" : 4.1456080298839363962315474054776132106781005859375,
+        "area" : "area",
+        "showicon" : true,
+        "publishTime" : 2,
+        "pcUrl" : "pcUrl",
+        "publishUserId" : 1,
+        "QRcodeUrl" : "QRcodeUrl",
+        "tags" : "tags",
+        "isFollow" : 1,
+        "wapUrl" : "wapUrl",
+        "joinedPeople" : 2,
+        "publishType" : 1,
+        "money" : 6.8468526983526398765889098285697400569915771484375,
+        "priseCount" : 9,
+        "name" : "name",
+        "endTime" : 5,
+        "contactPhone" : "contactPhone",
+        "status" : 6
+      }
+    },
+    "Banner" : {
+      "type" : "object",
+      "properties" : {
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "icon" : {
+          "type" : "string",
+          "description" : "备用字段"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "跳转类型(0=app内任务 1=app内web 2=app外web 3=活动 4=app内圈子 5=app内商品 6=街景 7=站内查公交页)"
+        },
+        "order" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "extraInfo1" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "备用字段"
+        },
+        "extraInfo2" : {
+          "type" : "string",
+          "description" : "备用字段"
+        },
+        "extraInfo3" : {
+          "type" : "string",
+          "description" : "备用字段"
+        }
+      },
+      "description" : "大图",
+      "example" : {
+        "cover" : "cover",
+        "icon" : "icon",
+        "extraInfo1" : 2,
+        "id" : 1,
+        "type" : 5,
+        "url" : "url",
+        "extraInfo2" : "extraInfo2",
+        "status" : 6,
+        "order" : 5,
+        "extraInfo3" : "extraInfo3"
+      }
+    },
+    "Sponsor" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "showicon" : {
+          "type" : "boolean"
+        },
+        "sponsorId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "publishTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "checkedTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "extraInfo1" : {
+          "type" : "string"
+        },
+        "extraInfo2" : {
+          "type" : "string"
+        },
+        "extraInfo3" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "description" : "赞助方",
+      "example" : {
+        "showicon" : true,
+        "publishTime" : 1,
+        "sponsorId" : 0,
+        "name" : "name",
+        "icon" : "icon",
+        "extraInfo1" : "extraInfo1",
+        "checkedTime" : 5,
+        "extraInfo2" : "extraInfo2",
+        "status" : 6,
+        "extraInfo3" : 5
+      }
+    },
+    "Field" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "showicon" : {
+          "type" : "boolean"
+        },
+        "categoryId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "publishTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "checkedTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "extraInfo1" : {
+          "type" : "string"
+        },
+        "extraInfo2" : {
+          "type" : "string"
+        },
+        "extraInfo3" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "description" : "场地",
+      "example" : {
+        "showicon" : true,
+        "publishTime" : 6,
+        "name" : "name",
+        "icon" : "icon",
+        "extraInfo1" : "extraInfo1",
+        "checkedTime" : 1,
+        "categoryId" : 0,
+        "extraInfo2" : "extraInfo2",
+        "status" : 5,
+        "extraInfo3" : 5
+      }
+    },
+    "Member" : {
+      "type" : "object",
+      "properties" : {
+        "memberId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "Membername" : {
+          "type" : "string"
+        },
+        "avatar" : {
+          "type" : "string"
+        },
+        "gender" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "slogan" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "money" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "birth" : {
+          "type" : "string"
+        },
+        "grade" : {
+          "type" : "string"
+        },
+        "level" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "tags" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "ts" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "area" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "area" : "area",
+        "gender" : 6,
+        "level" : 5,
+        "Membername" : "Membername",
+        "birth" : "birth",
+        "avatar" : "avatar",
+        "tags" : "tags",
+        "money" : 5,
+        "grade" : "grade",
+        "name" : "name",
+        "id" : 1,
+        "slogan" : "slogan",
+        "memberId" : 0,
+        "status" : 2,
+        "ts" : 7
+      }
+    },
+    "InitData" : {
+      "type" : "object",
+      "properties" : {
+        "downloadUrl" : {
+          "type" : "string",
+          "example" : "http://www.google.com/google.apk"
+        },
+        "force" : {
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 0
+        },
+        "number" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "msg" : {
+          "type" : "string",
+          "example" : "下载地址字段"
+        },
+        "extraInfo" : {
+          "$ref" : "#/definitions/InitData_extraInfo"
+        }
+      },
+      "example" : {
+        "msg" : "下载地址字段",
+        "number" : 0,
+        "downloadUrl" : "http://www.google.com/google.apk",
+        "force" : 0,
+        "extraInfo" : {
+          "specialUrl" : "specialUrl",
+          "aboutUsUrl" : "aboutUsUrl",
+          "versionUrl" : "versionUrl"
+        }
+      }
+    },
+    "Icon" : {
+      "type" : "object",
+      "properties" : {
+        "icon" : {
+          "type" : "string"
+        },
+        "cover" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "跳转类型(0=app内任务 1=app内web 2=app外web 3=活动 4=app内圈子 5=app内商品 6=街景 7=站内查公交页)"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "order" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "webUrl" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "cover" : "cover",
+        "webUrl" : "webUrl",
+        "icon" : "icon",
+        "name" : "name",
+        "id" : 9,
+        "type" : 7,
+        "order" : 3
+      }
+    },
+    "Order" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "memberId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "activityId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "value" : {
+          "type" : "number"
+        },
+        "time" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "status" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "orderNo" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "activityId" : 1,
+        "orderNo" : "orderNo",
+        "id" : 0,
+        "time" : 5,
+        "value" : 5.962133916683182377482808078639209270477294921875,
+        "memberId" : 6,
+        "status" : 2
+      }
+    },
+    "Recharge" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "0=等待 1=成功 2=失败 3=其他"
+        },
+        "msg" : {
+          "type" : "string"
+        },
+        "serialNumber" : {
+          "type" : "string",
+          "description" : "支付平台产生的流水号"
+        }
+      },
+      "description" : "充值结果",
+      "example" : {
+        "msg" : "msg",
+        "code" : 0,
+        "serialNumber" : "serialNumber"
+      }
+    },
+    "Category" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "subCategory" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SubCategoryItem"
+          }
+        }
+      },
+      "example" : {
+        "summary" : "summary",
+        "subCategory" : [ {
+          "summary" : "summary",
+          "showicon" : true,
+          "name" : "name",
+          "icon" : "icon",
+          "categoryId" : 0
+        }, {
+          "summary" : "summary",
+          "showicon" : true,
+          "name" : "name",
+          "icon" : "icon",
+          "categoryId" : 0
+        } ],
+        "name" : "name"
+      }
+    },
+    "SubCategoryItem" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "showicon" : {
+          "type" : "boolean"
+        },
+        "categoryId" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "example" : {
+        "summary" : "summary",
+        "showicon" : true,
+        "name" : "name",
+        "icon" : "icon",
+        "categoryId" : 0
+      }
+    },
+    "News" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "source" : {
+          "type" : "string",
+          "description" : "来源"
+        },
+        "time" : {
+          "type" : "string"
+        },
+        "extraInfo" : {
+          "type" : "string",
+          "description" : "备用字段"
+        }
+      },
+      "example" : {
+        "icon" : "icon",
+        "id" : 2,
+        "source" : "source",
+        "time" : "time",
+        "title" : "title",
+        "url" : "url",
+        "extraInfo" : "extraInfo"
+      }
+    },
+    "People" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        },
+        "source" : {
+          "type" : "string",
+          "description" : "来源"
+        },
+        "time" : {
+          "type" : "string"
+        },
+        "lat" : {
+          "type" : "number"
+        },
+        "lon" : {
+          "type" : "number"
+        },
+        "extraInfo" : {
+          "type" : "string",
+          "description" : "备用字段"
+        }
+      },
+      "example" : {
+        "icon" : "icon",
+        "lon" : 1.231513536777255612975068288506008684635162353515625,
+        "id" : 4,
+        "source" : "source",
+        "time" : "time",
+        "title" : "title",
+        "url" : "url",
+        "lat" : 7.3862819483858839220147274318151175975799560546875,
+        "extraInfo" : "extraInfo"
+      }
+    },
+    "Status" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 200
+        },
+        "msg" : {
+          "type" : "string",
+          "example" : "ok"
+        }
+      },
+      "example" : {
+        "msg" : "ok",
+        "code" : 200
+      }
+    },
+    "InitModel" : {
+      "type" : "object",
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Status"
+        },
+        "data" : {
+          "$ref" : "#/definitions/InitData"
+        }
+      },
+      "example" : {
+        "data" : {
+          "msg" : "下载地址字段",
+          "number" : 0,
+          "downloadUrl" : "http://www.google.com/google.apk",
+          "force" : 0,
+          "extraInfo" : {
+            "specialUrl" : "specialUrl",
+            "aboutUsUrl" : "aboutUsUrl",
+            "versionUrl" : "versionUrl"
+          }
+        },
+        "status" : {
+          "msg" : "ok",
+          "code" : 200
+        }
+      }
+    },
+    "Response" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "msg" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "msg" : "msg",
+        "code" : 0
+      }
+    },
+    "Error" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "msg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "inline_response_200" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "banners" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Banner"
+          }
+        },
+        "icons" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Icon"
+          }
+        },
+        "news" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/News"
+          }
+        },
+        "people" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/People"
+          }
+        }
+      },
+      "example" : {
+        "news" : [ {
+          "icon" : "icon",
+          "id" : 2,
+          "source" : "source",
+          "time" : "time",
+          "title" : "title",
+          "url" : "url",
+          "extraInfo" : "extraInfo"
+        }, {
+          "icon" : "icon",
+          "id" : 2,
+          "source" : "source",
+          "time" : "time",
+          "title" : "title",
+          "url" : "url",
+          "extraInfo" : "extraInfo"
+        } ],
+        "icons" : [ {
+          "cover" : "cover",
+          "webUrl" : "webUrl",
+          "icon" : "icon",
+          "name" : "name",
+          "id" : 9,
+          "type" : 7,
+          "order" : 3
+        }, {
+          "cover" : "cover",
+          "webUrl" : "webUrl",
+          "icon" : "icon",
+          "name" : "name",
+          "id" : 9,
+          "type" : 7,
+          "order" : 3
+        } ],
+        "banners" : [ {
+          "cover" : "cover",
+          "icon" : "icon",
+          "extraInfo1" : 2,
+          "id" : 1,
+          "type" : 5,
+          "url" : "url",
+          "extraInfo2" : "extraInfo2",
+          "status" : 6,
+          "order" : 5,
+          "extraInfo3" : "extraInfo3"
+        }, {
+          "cover" : "cover",
+          "icon" : "icon",
+          "extraInfo1" : 2,
+          "id" : 1,
+          "type" : 5,
+          "url" : "url",
+          "extraInfo2" : "extraInfo2",
+          "status" : 6,
+          "order" : 5,
+          "extraInfo3" : "extraInfo3"
+        } ],
+        "people" : [ {
+          "icon" : "icon",
+          "lon" : 1.231513536777255612975068288506008684635162353515625,
+          "id" : 4,
+          "source" : "source",
+          "time" : "time",
+          "title" : "title",
+          "url" : "url",
+          "lat" : 7.3862819483858839220147274318151175975799560546875,
+          "extraInfo" : "extraInfo"
+        }, {
+          "icon" : "icon",
+          "lon" : 1.231513536777255612975068288506008684635162353515625,
+          "id" : 4,
+          "source" : "source",
+          "time" : "time",
+          "title" : "title",
+          "url" : "url",
+          "lat" : 7.3862819483858839220147274318151175975799560546875,
+          "extraInfo" : "extraInfo"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_1" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "banners" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Banner"
+          }
+        }
+      },
+      "example" : {
+        "banners" : [ {
+          "cover" : "cover",
+          "icon" : "icon",
+          "extraInfo1" : 2,
+          "id" : 1,
+          "type" : 5,
+          "url" : "url",
+          "extraInfo2" : "extraInfo2",
+          "status" : 6,
+          "order" : 5,
+          "extraInfo3" : "extraInfo3"
+        }, {
+          "cover" : "cover",
+          "icon" : "icon",
+          "extraInfo1" : 2,
+          "id" : 1,
+          "type" : 5,
+          "url" : "url",
+          "extraInfo2" : "extraInfo2",
+          "status" : 6,
+          "order" : 5,
+          "extraInfo3" : "extraInfo3"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_2" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "icons" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Icon"
+          }
+        }
+      },
+      "example" : {
+        "icons" : [ {
+          "cover" : "cover",
+          "webUrl" : "webUrl",
+          "icon" : "icon",
+          "name" : "name",
+          "id" : 9,
+          "type" : 7,
+          "order" : 3
+        }, {
+          "cover" : "cover",
+          "webUrl" : "webUrl",
+          "icon" : "icon",
+          "name" : "name",
+          "id" : 9,
+          "type" : 7,
+          "order" : 3
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_3" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        }
+      },
+      "example" : {
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_4" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Member"
+        }
+      },
+      "example" : {
+        "data" : {
+          "area" : "area",
+          "gender" : 6,
+          "level" : 5,
+          "Membername" : "Membername",
+          "birth" : "birth",
+          "avatar" : "avatar",
+          "tags" : "tags",
+          "money" : 5,
+          "grade" : "grade",
+          "name" : "name",
+          "id" : 1,
+          "slogan" : "slogan",
+          "memberId" : 0,
+          "status" : 2,
+          "ts" : 7
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_5" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "orders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Order"
+          }
+        }
+      },
+      "example" : {
+        "orders" : [ {
+          "activityId" : 1,
+          "orderNo" : "orderNo",
+          "id" : 0,
+          "time" : 5,
+          "value" : 5.962133916683182377482808078639209270477294921875,
+          "memberId" : 6,
+          "status" : 2
+        }, {
+          "activityId" : 1,
+          "orderNo" : "orderNo",
+          "id" : 0,
+          "time" : 5,
+          "value" : 5.962133916683182377482808078639209270477294921875,
+          "memberId" : 6,
+          "status" : 2
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "body" : {
+      "properties" : {
+        "version" : {
+          "type" : "string"
+        },
+        "imei" : {
+          "type" : "string"
+        },
+        "client" : {
+          "type" : "string"
+        },
+        "ts" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "val" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "支付厂家类型 0=支付宝,1=微信,3=appPay,4=银联,5=其他"
+        },
+        "value" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "memberId" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "inline_response_200_6" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "$ref" : "#/definitions/Recharge"
+        }
+      },
+      "example" : {
+        "data" : {
+          "msg" : "msg",
+          "code" : 0,
+          "serialNumber" : "serialNumber"
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_7" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "activityList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Activity"
+          }
+        }
+      },
+      "example" : {
+        "activityList" : [ {
+          "serviceType" : 1,
+          "followCount" : 7,
+          "icon" : "icon",
+          "extraInfo1" : "extraInfo1",
+          "lon" : 7.3862819483858839220147274318151175975799560546875,
+          "checkedTime" : 7,
+          "extraInfo2" : "extraInfo2",
+          "extraInfo3" : 9,
+          "cover" : "cover",
+          "activityId" : 0,
+          "shareCount" : 5,
+          "checkStatus" : 1,
+          "contactPeople" : "contactPeople",
+          "contactAddr" : "contactAddr",
+          "extraUrl" : "extraUrl",
+          "limitPeople" : 3,
+          "startTime" : 5,
+          "viewCount" : 4,
+          "lat" : 4.1456080298839363962315474054776132106781005859375,
+          "area" : "area",
+          "showicon" : true,
+          "publishTime" : 2,
+          "pcUrl" : "pcUrl",
+          "publishUserId" : 1,
+          "QRcodeUrl" : "QRcodeUrl",
+          "tags" : "tags",
+          "isFollow" : 1,
+          "wapUrl" : "wapUrl",
+          "joinedPeople" : 2,
+          "publishType" : 1,
+          "money" : 6.8468526983526398765889098285697400569915771484375,
+          "priseCount" : 9,
+          "name" : "name",
+          "endTime" : 5,
+          "contactPhone" : "contactPhone",
+          "status" : 6
+        }, {
+          "serviceType" : 1,
+          "followCount" : 7,
+          "icon" : "icon",
+          "extraInfo1" : "extraInfo1",
+          "lon" : 7.3862819483858839220147274318151175975799560546875,
+          "checkedTime" : 7,
+          "extraInfo2" : "extraInfo2",
+          "extraInfo3" : 9,
+          "cover" : "cover",
+          "activityId" : 0,
+          "shareCount" : 5,
+          "checkStatus" : 1,
+          "contactPeople" : "contactPeople",
+          "contactAddr" : "contactAddr",
+          "extraUrl" : "extraUrl",
+          "limitPeople" : 3,
+          "startTime" : 5,
+          "viewCount" : 4,
+          "lat" : 4.1456080298839363962315474054776132106781005859375,
+          "area" : "area",
+          "showicon" : true,
+          "publishTime" : 2,
+          "pcUrl" : "pcUrl",
+          "publishUserId" : 1,
+          "QRcodeUrl" : "QRcodeUrl",
+          "tags" : "tags",
+          "isFollow" : 1,
+          "wapUrl" : "wapUrl",
+          "joinedPeople" : 2,
+          "publishType" : 1,
+          "money" : 6.8468526983526398765889098285697400569915771484375,
+          "priseCount" : 9,
+          "name" : "name",
+          "endTime" : 5,
+          "contactPhone" : "contactPhone",
+          "status" : 6
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_8" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "activityDetail" : {
+          "$ref" : "#/definitions/Activity"
+        }
+      },
+      "example" : {
+        "activityDetail" : {
+          "serviceType" : 1,
+          "followCount" : 7,
+          "icon" : "icon",
+          "extraInfo1" : "extraInfo1",
+          "lon" : 7.3862819483858839220147274318151175975799560546875,
+          "checkedTime" : 7,
+          "extraInfo2" : "extraInfo2",
+          "extraInfo3" : 9,
+          "cover" : "cover",
+          "activityId" : 0,
+          "shareCount" : 5,
+          "checkStatus" : 1,
+          "contactPeople" : "contactPeople",
+          "contactAddr" : "contactAddr",
+          "extraUrl" : "extraUrl",
+          "limitPeople" : 3,
+          "startTime" : 5,
+          "viewCount" : 4,
+          "lat" : 4.1456080298839363962315474054776132106781005859375,
+          "area" : "area",
+          "showicon" : true,
+          "publishTime" : 2,
+          "pcUrl" : "pcUrl",
+          "publishUserId" : 1,
+          "QRcodeUrl" : "QRcodeUrl",
+          "tags" : "tags",
+          "isFollow" : 1,
+          "wapUrl" : "wapUrl",
+          "joinedPeople" : 2,
+          "publishType" : 1,
+          "money" : 6.8468526983526398765889098285697400569915771484375,
+          "priseCount" : 9,
+          "name" : "name",
+          "endTime" : 5,
+          "contactPhone" : "contactPhone",
+          "status" : 6
+        },
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_9" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "sponsorList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Sponsor"
+          }
+        }
+      },
+      "example" : {
+        "sponsorList" : [ {
+          "showicon" : true,
+          "publishTime" : 1,
+          "sponsorId" : 0,
+          "name" : "name",
+          "icon" : "icon",
+          "extraInfo1" : "extraInfo1",
+          "checkedTime" : 5,
+          "extraInfo2" : "extraInfo2",
+          "status" : 6,
+          "extraInfo3" : 5
+        }, {
+          "showicon" : true,
+          "publishTime" : 1,
+          "sponsorId" : 0,
+          "name" : "name",
+          "icon" : "icon",
+          "extraInfo1" : "extraInfo1",
+          "checkedTime" : 5,
+          "extraInfo2" : "extraInfo2",
+          "status" : 6,
+          "extraInfo3" : 5
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_10" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "fieldList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Field"
+          }
+        }
+      },
+      "example" : {
+        "fieldList" : [ {
+          "showicon" : true,
+          "publishTime" : 6,
+          "name" : "name",
+          "icon" : "icon",
+          "extraInfo1" : "extraInfo1",
+          "checkedTime" : 1,
+          "categoryId" : 0,
+          "extraInfo2" : "extraInfo2",
+          "status" : 5,
+          "extraInfo3" : 5
+        }, {
+          "showicon" : true,
+          "publishTime" : 6,
+          "name" : "name",
+          "icon" : "icon",
+          "extraInfo1" : "extraInfo1",
+          "checkedTime" : 1,
+          "categoryId" : 0,
+          "extraInfo2" : "extraInfo2",
+          "status" : 5,
+          "extraInfo3" : 5
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_11" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Category"
+          }
+        }
+      },
+      "example" : {
+        "data" : [ {
+          "summary" : "summary",
+          "subCategory" : [ {
+            "summary" : "summary",
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0
+          }, {
+            "summary" : "summary",
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0
+          } ],
+          "name" : "name"
+        }, {
+          "summary" : "summary",
+          "subCategory" : [ {
+            "summary" : "summary",
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0
+          }, {
+            "summary" : "summary",
+            "showicon" : true,
+            "name" : "name",
+            "icon" : "icon",
+            "categoryId" : 0
+          } ],
+          "name" : "name"
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_12" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Member"
+          }
+        }
+      },
+      "example" : {
+        "data" : [ {
+          "area" : "area",
+          "gender" : 6,
+          "level" : 5,
+          "Membername" : "Membername",
+          "birth" : "birth",
+          "avatar" : "avatar",
+          "tags" : "tags",
+          "money" : 5,
+          "grade" : "grade",
+          "name" : "name",
+          "id" : 1,
+          "slogan" : "slogan",
+          "memberId" : 0,
+          "status" : 2,
+          "ts" : 7
+        }, {
+          "area" : "area",
+          "gender" : 6,
+          "level" : 5,
+          "Membername" : "Membername",
+          "birth" : "birth",
+          "avatar" : "avatar",
+          "tags" : "tags",
+          "money" : 5,
+          "grade" : "grade",
+          "name" : "name",
+          "id" : 1,
+          "slogan" : "slogan",
+          "memberId" : 0,
+          "status" : 2,
+          "ts" : 7
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "inline_response_200_13" : {
+      "properties" : {
+        "status" : {
+          "$ref" : "#/definitions/Response"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Spare"
+          }
+        }
+      },
+      "example" : {
+        "data" : [ {
+          "topicId" : 5,
+          "from" : 0,
+          "to" : 6,
+          "time" : 1,
+          "shuoshuoId" : 5,
+          "value" : 2.3021358869347654518833223846741020679473876953125
+        }, {
+          "topicId" : 5,
+          "from" : 0,
+          "to" : 6,
+          "time" : 1,
+          "shuoshuoId" : 5,
+          "value" : 2.3021358869347654518833223846741020679473876953125
+        } ],
+        "status" : {
+          "msg" : "msg",
+          "code" : 0
+        }
+      }
+    },
+    "InitData_extraInfo" : {
+      "properties" : {
+        "specialUrl" : {
+          "type" : "string"
+        },
+        "versionUrl" : {
+          "type" : "string"
+        },
+        "aboutUsUrl" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "specialUrl" : "specialUrl",
+        "aboutUsUrl" : "aboutUsUrl",
+        "versionUrl" : "versionUrl"
+      }
+    }
+  }
+}
